@@ -20,7 +20,7 @@
       <img
         v-if="item.image"
         class="section-image"
-        :src="`/images/${item.image}`"
+        :src="require(`../../static/images/${item.image}`)"
         :alt="item.image"
       >
     </div>
