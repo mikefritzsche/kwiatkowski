@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <header>
-      <img src="/images/the_art_of.jpg" alt="">
+      <img src="../static/images/the_art_of.jpg" alt="">
     </header>
     <main>
       <ul>
         <li v-for="(section, i) in sectionTitles" :key="`section-title-${i}`">
           <div>
             <nuxt-link :to="`/${section.title}/`">
-              <div><img :src="`/images/${section.tn}`" alt=""></div>
+              <div><img :src="require(`../static/images/${section.tn}`)" alt=""></div>
               {{ section.title}}
             </nuxt-link>
           </div>

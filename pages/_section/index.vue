@@ -6,13 +6,13 @@
     </p>
     <h1>
       <header>
-        <img :src="`/images/${section}_of.jpg`" alt="">
+        <img :src="require(`../../static/images/${section}_of.jpg`)" alt="">
       </header>
     </h1>
     <ul class="image-grid">
       <li v-for="(item, i) in sectionItems" :key="`section-item-${i}`">
         <nuxt-link :to="`/${item.section}/${item.name}/`">
-        <img :src="`/images/${item.imageTn}`" alt="">
+        <img :src="require(`../../static/images/${item.imageTn}`)" alt="">
         <div>{{ item.label }}</div>
         </nuxt-link>
       </li>

@@ -3,12 +3,12 @@
     <div class="prev-next-nav">
       <div>
         <nuxt-link :to="prevLink">
-          <img src="/images/b_back.jpg" alt="">
+          <img src="../../static/images/b_back.jpg" alt="">
         </nuxt-link>
       </div>
       <div>
         <nuxt-link :to="nextLink">
-          <img src="/images/b_next.jpg" alt="">
+          <img src="../../static/images/b_next.jpg" alt="">
         </nuxt-link>
       </div>
       <h1>
@@ -43,7 +43,8 @@
             :key="`section-tn-${i}`"
             :class="{active: tn.name === item.name}"
           >
-            <img :src="`/images/${tn.imageTn}`" />
+            <img :src="require(`../../static/images/${tn.imageTn}`)" />
+<!--            <DynamicImage :image-path="`../../static/images/${tn.imageTn}`" />-->
           </li>
         </ul>
       </div>
@@ -55,6 +56,8 @@
   // import axios from 'axios'
   import { mapGetters, mapState } from 'vuex'
   import NavLinks from '../../components/NavLinks'
+
+  // import DynamicImage from '../../components/DynamicImage'
 
   export default {
     asyncData(context) {
@@ -79,6 +82,7 @@
     },
     transition: 'page',
     components: {
+      // DynamicImage,
       NavLinks
     },
     data() {
