@@ -1,0 +1,30 @@
+@import './settings';
+
+body {
+  color: #ffc;
+  text-align: center;
+  a {
+    color: #996633;
+    text-decoration: none;
+  }
+  &.page {
+    background: #000;
+    //padding-top: remcalc(20);
+    text-align: center;
+  }
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 50ms;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
