@@ -67,15 +67,15 @@
         // console.log('asyncData payload: ', payload)
         // extract the user object passed from nuxt.config.js
         return {
-          item: context.payload,
+          // item: context.payload,
           params: context.params
         }
       }
       else {
-        const data =  require('../../static/routesData.json')
+        // const data =  require('../../static/routesData.json')
         // console.log('context.params: ', context.params)
         return {
-          item: data.find(route => route.name === context.params.id),
+          // item: data.find(route => route.name === context.params.id),
           params: context.params
         }
       }
@@ -100,9 +100,9 @@
         'getSectionItem',
         'getSectionItems'
       ]),
-      // item() {
-      //   return this.getSectionItem(this.id)
-      // },
+      item() {
+        return this.getSectionItem(this.id)
+      },
       imageStyles() {
         const styles = {
           maxWidth: '100%'
@@ -151,6 +151,12 @@
       this.$nextTick(() => {
         console.log('payloadData: ', this.payloadData)
         console.log('params: ', this.params)
+        console.log('sectionItems: ', this.sectionItems)
+        console.log('prevLink: ', this.prevLink)
+        console.log('nextLink: ', this.nextLink)
+        console.log('itemIndex + 1: ', this.itemIndex + 1)
+        console.log('itemIndex - 1: ', this.itemIndex - 1)
+        console.log('item.section: ', this.item.section)
         this.isMounted = true
         window.addEventListener('resize', this.onResize)
         // window.addEventListener('resize', e => {
